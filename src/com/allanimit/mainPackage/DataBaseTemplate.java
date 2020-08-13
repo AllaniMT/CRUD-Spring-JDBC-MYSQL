@@ -21,13 +21,15 @@ public class DataBaseTemplate {
 
     //Update employee
     public int updateDevloper(Developer developer) {
-        String updateSqlQuery = "UPDATE `developer` SET (`age`, `phone`, `adress`, `fname`, `lname`, `skill`) VALUES ( "
-                + developer.getAge() + "','" + developer.getPhone() + "','" + developer.getAdress() + "','" + developer.getFname() + "','" + developer.getLname() + "','" + developer.getSkill() + " WHERE id=" + developer.getId() + ")";
-        return jdbcTemplate.update(updateSqlQuery);
+        String updateSqlQuery = "UPDATE `developer` SET `age`=" + developer.getAge() +  ", `phone`="+ developer.getPhone() + ", `adress`=\"" + developer.getAdress() +"\", `fname`=\"" + developer.getFname() + "\", `lname`=\"" + developer.getLname() + "\", `skill`=\"" + developer.getSkill() + "\" WHERE "  + developer.getId(); 
+        System.out.println(updateSqlQuery);
+        return jdbcTemplate.update(updateSqlQuery);  
     }
 
-    public int deleteEmployee(Developer developer) {
-        String deleteSqlQuery = "DELETE FROM `devloper` WHERE id=" + developer.getId() + ")";
+    
+  
+    public int deleteDeveloper(Developer developer) {
+        String deleteSqlQuery = "DELETE FROM `developer` WHERE id=" + developer.getId() ;
         return jdbcTemplate.update(deleteSqlQuery);
     }
 

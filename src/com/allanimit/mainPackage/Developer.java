@@ -10,7 +10,9 @@ public class Developer {
     private String lname;
     private String skill;
 
-    public Developer() { }
+    public Developer() {
+    }
+
     public int getId() {
         return id;
     }
@@ -67,7 +69,7 @@ public class Developer {
         this.skill = skill;
     }
 
-    
+
     public Developer(int id, int age, int phone, String adress, String fname, String lname, String skill) {
         super();
         this.id = id;
@@ -78,7 +80,7 @@ public class Developer {
         this.lname = lname;
         this.skill = skill;
     }
-    
+
     public Developer(int age, int phone, String adress, String fname, String lname, String skill) {
         this.age = age;
         this.phone = phone;
@@ -88,5 +90,8 @@ public class Developer {
         this.skill = skill;
     }
 
+    public String showInfo() {
+        return id + " " + age + " " + phone + " " + adress + " " + fname + " " + lname + " " + skill;
+    }
 
 }
